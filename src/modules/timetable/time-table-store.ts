@@ -6,7 +6,7 @@ export interface Driver{
     workHours : (number[])[]    
 }
 
-export interface Solution{
+export interface Shedule{
 
 }
 
@@ -15,14 +15,14 @@ export interface TimeTableState {
     weekDays : string[]; 
     drivers : Driver[];
     selectedDriver: number;
-    solutions: Solution[];
+    Shedules: Shedule[];
 };
 
 
 export enum TimeTableActionType {
-  'SELECT_DRIVER' = 'SELECT_DRIVER',
-  'CREATE_DRIVER' = 'CREATE_DRIVER',
-  TOGGLE_WORK_HOUR = "TOGGLE_WORK_HOUR"
+  SELECT_DRIVER = 'SELECT_DRIVER',
+  CREATE_DRIVER = 'CREATE_DRIVER',
+  TOGGLE_WORK_HOUR = 'TOGGLE_WORK_HOUR'
 }
 
 export interface TimeTableAction extends Action {
@@ -37,7 +37,7 @@ const initialState: TimeTableState = {
         {index:0,name:'Ortega', workHours:[[0,1,2,3],[1,2,3,4],[0,1,2,3,4,5],[0,1,2,3],[0,2,3,4,5,6]]},
     ],
     selectedDriver: 0,
-    solutions: [],
+    Shedules: [],
 }
 
 const timeTableActions:{[key in TimeTableActionType]:(state:TimeTableState, payload:any)=>TimeTableState} = {
